@@ -1,5 +1,7 @@
 # timeline_ui
 
+It's only a practice for vue.
+
 ## Project setup
 ```
 npm install
