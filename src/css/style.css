@@ -103,3 +103,12 @@
 .timeline-item:nth-child(2n) .timeline-date {
 	background-color: #b292c5;
 }
+
+.center {
+	text-align: center;
+}
+
+.form {
+	width: 500px;
+	margin: auto;
+}

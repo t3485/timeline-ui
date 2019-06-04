@@ -4,7 +4,10 @@
 			<i class="el-icon-caret-top" />
 		</div>
 		<div @click="$emit('add:click')" v-show="showAdd">
-			<i class="el-icon-plus" @click="$emit('add:click')" />
+			<i class="el-icon-plus" />
+		</div>
+		<div @click="$router.go(-1)" v-show="showBack">
+			<i class="el-icon-back" />
 		</div>
 	</div>
 </template>
@@ -15,7 +18,8 @@
 		data() {
 			return {
 				showAdd: false,
-				showBackTop: false
+				showBackTop: false,
+				showBack: false
 			}
 		},
 		created() {
@@ -26,6 +30,7 @@
 			} else {
 				this.showAdd = true;
 				this.showBackTop = true;
+				this.showBack = true;
 			}
 		},
 		methods: {
