@@ -1,10 +1,10 @@
 <template>
-	<el-table highlight-current-row @current-change="change" :data="timelineData">
+	<el-table highlight-current-row @current-change="change" :data="timelineData" @row-contextmenu="rightChange">
 		<el-table-column type="index"></el-table-column>
 		<el-table-column property="title" label="标题"></el-table-column>
 		<el-table-column property="creator" label="创建者"></el-table-column>
 		<el-table-column property="creationTime" label="创建时间"></el-table-column>
-		<el-table-column property="creator" label="权限"></el-table-column>
+		<el-table-column property="authorities" label="权限"></el-table-column>
 	</el-table>
 </template>
 
@@ -17,6 +17,7 @@
 					MaxResultCount: 10
 				}
 			}).then(res => {
+        console.log(res)
 				this.timelineData = res.data.result.items;
 			})
 		},
@@ -36,8 +37,16 @@
 					params: {
 						id: currentRow.id
 					}
-				})
-			}
+				});
+			},
+      rightChange(currentRow){
+        this.$router.push({
+        	name: 'Assign',
+        	params: {
+        		id: currentRow.id
+        	}
+        });
+      }
 		}
 	}
 </script>

@@ -10,6 +10,14 @@ import axios from 'axios'
 Vue.config.productionTip = false
 Vue.use(element)
 
+axios.interceptors.response.use(function (config) {
+    return config;
+  }, function (error) {
+    if (error.response.status == 401){
+      store.commit('clearAuthToken')
+    }
+    return Promise.reject(error);
+  });
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = 'http://localhost:21021/api';
 

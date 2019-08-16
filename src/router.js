@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Items from './views/Items.vue'
+import Assign from './views/Asign.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/assign/:id',
+      name: 'Assign',
+      component: Assign
     },
     {
       path: '/item/:id',

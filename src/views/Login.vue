@@ -19,6 +19,13 @@
 
 <script>
 	export default {
+		created(){
+			if (this.$store.getters.isLogin){
+				this.$router.push({
+					name: 'home',
+				});
+			}
+		},
 		data() {
 			return {
 				loginInfo: {
@@ -39,7 +46,7 @@
 							token: res.data.result.accessToken,
 							rememberMe: this.loginInfo.rememberMe
 						});
-						this.$axios.get(`services/app/User/Get`, {
+						this.$axios.get('services/app/User/Get', {
 							params: {
 								Id: res.data.result.userId
 							}
@@ -49,6 +56,9 @@
 								this.$message({
 									message: '登陆成功',
 									type: 'success'
+								});
+								this.$router.push({
+									name: 'home',
 								});
 							}
 						})
