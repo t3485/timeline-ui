@@ -19,7 +19,7 @@ axios.interceptors.response.use(function (config) {
     return Promise.reject(error);
   });
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = 'http://localhost:21021/api';
+axios.defaults.baseURL = 'http://localhost:5000/api';
 
 new Vue({
   router,

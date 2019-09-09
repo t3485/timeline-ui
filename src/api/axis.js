@@ -21,5 +21,8 @@ export default {
     return axios.get('/services/app/User/GetAll', {
       params: p
     })
+  },
+  CreateItem(p){
+    return axios.post('/services/app/TimeAxisService/CreateItem', p);
   }
 }
