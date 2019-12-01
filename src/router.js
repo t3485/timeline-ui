@@ -38,6 +38,16 @@ export default new Router({
       component: Items
     },
     {
+      path: '/note',
+      name: 'note',
+      component: () => import('./views/note/index.vue')
+    },
+    {
+      path: '/plan',
+      name: 'plan',
+      component: () => import('./views/plan/index.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
