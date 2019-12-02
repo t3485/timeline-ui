@@ -48,7 +48,7 @@ export default new Router({
       component: () => import('./views/plan/index.vue')
     },
     {
-      path: '/about',
+      path: '/about/:id',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
